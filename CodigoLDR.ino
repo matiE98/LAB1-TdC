@@ -46,22 +46,21 @@ void loop()
 void obtenerDatos()
 {
   luz = analogRead(PIN_LUZ);
-  potencia = map(luz, 0, 1023, 0, 255);
-	mapear(potencia); 
+	mapear(luz); 
 }
 
-void mapear(int p)
+void mapear(int l)
 {
-  if (p <= 60) {
+  if (l <= 250) {
     velocidad = 1;
   }
-  else if (p > 60 && p <= 120) {
+  else if (l > 250 && l <= 500) {
     velocidad = 2;
   }
-  else if (p > 120 && p <= 180)  {
+  else if (l > 500 && l <= 750)  {
     velocidad = 3;
   }
-  else if (p > 180 && p <= 255){
+  else if (l > 750 && l <= 1023){
     velocidad = 4; // Significa que es de noche
   };  
 }
