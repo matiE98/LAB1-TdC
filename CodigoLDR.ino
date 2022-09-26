@@ -63,7 +63,7 @@ void loop()
 void obtenerDatos()
 {
   luz = analogRead(PIN_LUZ);
-	velocidad = map(luz, 0, 1023, 1, 4);
+  velocidad = map(luz, 0, 1023, 1, 4);
 }
 
 void regar(int duracion) 
@@ -98,11 +98,12 @@ void controlarMotor()
     apagado = 0;
     vueltas++;     
   }
-	else if ( velocidad == 4 ) {
-    if (apagado = 0) { // Si el motor está encendido se apagará
+  else if ( velocidad == 4 ) 
+  {
+    if (apagado = 0) 
+    { // Si el motor está encendido se apagará
       apagarMotor();
     }; 
-    tiempo = tiempo - 1000;
     Serial.println("Motor apagado");  
     Serial.print("lectura de luz: ");    
     Serial.println(luz); 
